@@ -1,0 +1,14 @@
+# kubectl apply -f ingress.yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: colour
+spec:
+  rules:
+  - host: colours.diginfra.net
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: background-colour-service
+          servicePort: http

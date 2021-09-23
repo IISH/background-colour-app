@@ -1,0 +1,16 @@
+{
+  "name": "color-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "debug": "^4.3.2",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "pug": "^3.0.2",
+    "request": "^2.88.2"
+  }
+}

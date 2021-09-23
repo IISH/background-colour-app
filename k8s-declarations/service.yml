@@ -1,0 +1,14 @@
+# kubectl create -f color-service.yml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: background-colour-service
+spec:
+  selector:
+    app: background-colour-app
+  ports:
+  - name: http
+    port: 3000
+    targetPort: 3000 # This is where the pod listens to
+    protocol: TCP

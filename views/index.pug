@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    table
+        thead
+            th color
+            th hex
+            th
+        each hex,name in list_background
+            tr
+                td
+                  a(href='/' + name)= name
+                td= hex
+                td(style='width: 100%; background-color: ' + hex)-// empty

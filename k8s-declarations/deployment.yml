@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: background-colour-app
+  labels:
+    app: background-colour-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: background-colour-app
+  template:
+    metadata:
+      labels:
+        app: background-colour-app
+    spec:
+      containers:
+        - image: registry.diginfra.net/lwo/background-colour-app:latest
+          name: background-colour-app
+          ports:
+            - name: http
+              containerPort: 3000
+          volumeMounts:
+            - mountPath: /mnt
+              name: application-data
+      volumes:
+        - name: application-data
+          persistentVolumeClaim:
+            claimName: background-colour-nfs
