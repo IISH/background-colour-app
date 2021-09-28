@@ -15,3 +15,7 @@ And point your browser to http://localhost:3000
 ## Run a container
 
     $ docker run --publish 3000:3000 --env BACKGROUND_COLOUR=yellow background-colour-app:latest
+
+## Deploy the container on a kubernetes cluster in the namespace 'demoapp'
+
+    $ kubectl apply -f k8s-declarations -n demoapp
