@@ -18,4 +18,13 @@ And point your browser to http://localhost:3000
 
 ## Deploy the container on a kubernetes cluster in the namespace 'demoapp'
 
-    $ kubectl apply -f k8s-declarations -n demoapp
+This will declare:
+
+    1. An ingress controller for HTTP traffic to your service.
+    2. A service that exposes your pod.
+    3. The deployment.
+    4. A Persistant volume claim to store data that persists beyond the lifespan of your pod.
+
+Here we assume the cluster configuration file and namespace exist:
+
+    $ kubectl apply -k k8s-declarations -n demoapp --kubeconfig=my_cluster_config
