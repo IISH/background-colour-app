@@ -1,5 +1,5 @@
 FROM node:alpine3.11
-LABEL Description="Background color application"
+LABEL Description="Background colour application"
 
 USER node
 
@@ -7,7 +7,7 @@ COPY . /home/node
 
 WORKDIR /home/node
 
-RUN /usr/local/bin/npm install
+RUN /usr/local/bin/npm install && rm -rf 'k8s-declarations'
 
 EXPOSE 3000
 

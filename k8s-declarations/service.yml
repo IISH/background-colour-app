@@ -1,5 +1,3 @@
-# kubectl create -f color-service.yml
----
 apiVersion: v1
 kind: Service
 metadata:
